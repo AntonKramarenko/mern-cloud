@@ -4,7 +4,10 @@ const mongoose = require('mongoose')
 const authRouter = require('./routes/auth.routes')
 const app = express()
 const PORT = config.get('serverPort') || 5000
+const corsMiddleware = require('./middleware/cors.middleware.js')
 
+
+app.use(corsMiddleware)
 app.use(express.json())
 app.use('/api/auth', authRouter)
 
