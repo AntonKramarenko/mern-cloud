@@ -13,10 +13,10 @@ function App() {
   const isAuth = useSelector(state => state.user.isAuth);
   const dispatch = useDispatch()
 
-      useEffect(() => {
-        dispatch(auth)
-      },[])
-
+  useEffect(() => {
+    dispatch(auth())
+   // eslint-disable-next-line
+}, [])
      
 
 
