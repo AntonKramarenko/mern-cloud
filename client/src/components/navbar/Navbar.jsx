@@ -6,6 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout } from '../../reducers/userReducer';
 import { getFiles, searchFiles } from '../../actions/file';
 import { showLoader } from '../../reducers/appReducer';
+import avatarLogo from '../../assets/img/avatar.svg'
+
+
 
 
 export default function Navbar() {
@@ -18,11 +21,11 @@ export default function Navbar() {
 
   function serchChangeHandler(e){
     setSearchName(e.target.value)
-    if(searchTimeout != false){
+    if(searchTimeout !== false){
       clearTimeout(searchTimeout)
     }
     dispatch(showLoader())
-    if(e.target.value != '') {setSearchTimeout(setTimeout((value) => {
+    if(e.target.value !== '') {setSearchTimeout(setTimeout((value) => {
       dispatch(searchFiles(value))
     },500, e.target.value))
     } else{
@@ -42,9 +45,11 @@ export default function Navbar() {
                 className='navbar__search' 
                 type='text'  
                 placeholder='Название файла...'/>}
+              
             {!isAuth && <div className="navbar__login"><NavLink to='/login'>Войти</NavLink></div>}
             {!isAuth &&  <div className="navbar__registration"><NavLink to='/registration'>Регистрация</NavLink></div>}
             {isAuth && <div className="navbar__login" onClick={() => dispatch(logout())}>Выход</div>}
+            {isAuth && <img src={avatarLogo}  alt=''/>}
         </div>
     </div>
   )

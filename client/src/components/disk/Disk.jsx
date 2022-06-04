@@ -20,6 +20,7 @@ export default function Disk() {
 
   useEffect(() => {
     dispatch(getFiles(currentDir,sort))
+    // eslint-disable-next-line
   },[currentDir, sort])
 
 

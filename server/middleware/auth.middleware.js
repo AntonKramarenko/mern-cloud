@@ -19,6 +19,6 @@ module.exports = (req, res, next) => {
         next()
     } catch (error) {
         console.log("Auth error auth.middleware")
-        // return res.status(401).json({ message: "Auth error middleware" })
+        return res.status(401).json({ message: "Auth error middleware" })
     }
 }

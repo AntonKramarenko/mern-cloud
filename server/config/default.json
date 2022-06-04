@@ -2,5 +2,6 @@
     "serverPort": 5000,
     "dbUrl": "mongodb+srv://anton:anton1997@cloud.tlz37.mongodb.net/?retryWrites=true&w=majority",
     "secretKey": "mern-secret-key",
-    "filePath": "/Users/anton/Desktop/React/mern-cloud/server/files/"  
+    "filePath": "/Users/anton/Desktop/React/mern-cloud/server/files/" , 
+    "staticPath": "/Users/anton/Desktop/React/mern-cloud/server/static/" 
 }
