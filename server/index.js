@@ -5,11 +5,10 @@ const mongoose = require('mongoose')
 const authRouter = require('./routes/auth.routes')
 const fileRouter = require('./routes/file.routes')
 const app = express()
-const PORT = process.env.PORT || 80
+const PORT = process.env.PORT || 5000
 const corsMiddleware = require('./middleware/cors.middleware.js')
 const filePathMiddleware = require('./middleware/filepath.middleware.js')
 const path = require('path')
-
 
 app.use(fileUpload({}))
 app.use(corsMiddleware)
@@ -21,9 +20,7 @@ app.use('/api/files', fileRouter)
 
 const start = async () => {
     try {
-
         await mongoose.connect(config.get('dbUrl'))
-
 
         app.listen(PORT, () => {
             console.log(`App has been started on port ${PORT}`)
