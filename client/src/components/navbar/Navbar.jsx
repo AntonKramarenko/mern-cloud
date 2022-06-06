@@ -9,8 +9,6 @@ import { showLoader } from '../../reducers/appReducer';
 import avatarLogo from '../../assets/img/avatar.svg'
 
 
-
-
 export default function Navbar() {
 
   const isAuth = useSelector(state => state.user.isAuth);
